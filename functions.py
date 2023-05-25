@@ -28,7 +28,7 @@ def get_recipe(keywords: list, temp="", recipes=list(), k=0) -> list:
         if k != len(keywords):
             temp += "%20"
     response = requests.get(
-        f"https://api.edamam.com/api/recipes/v2?type=public&q={temp}&app_id{os.getenv('RECIPE_API_ID')}=&app_key="
+        f"https://api.edamam.com/api/recipes/v2?type=public&q={temp}&app_id={os.getenv('RECIPE_API_ID')}&app_key="
         f"{os.getenv('RECIPE_API_KEY')}")
     result = response.json()
     if result['hits']:
